@@ -28,9 +28,11 @@ cloudabi64_vdso_blob.o		optional	compat_cloudabi64	\
 arm/allwinner/a10_timer.c	optional	a10_timer fdt
 arm/allwinner/a10_codec.c	optional	sound a10_codec
 arm/allwinner/a31_dmac.c	optional	a31_dmac
+arm/allwinner/a64/sun50i_a64_acodec.c	optional	fdt sound
 arm/allwinner/sunxi_dma_if.m	optional	a31_dmac
 arm/allwinner/aw_cir.c		optional	evdev aw_cir fdt
 arm/allwinner/aw_dwc3.c		optional	aw_dwc3 fdt
+arm/allwinner/aw_i2s.c		optional	fdt sound
 arm/allwinner/aw_gpio.c		optional	gpio aw_gpio fdt
 arm/allwinner/aw_mmc.c		optional	mmc aw_mmc fdt | mmccam aw_mmc fdt
 arm/allwinner/aw_nmi.c		optional	aw_nmi fdt \
@@ -47,6 +49,7 @@ arm/allwinner/aw_usb3phy.c	optional	xhci aw_usbphy fdt
 arm/allwinner/aw_wdog.c		optional	aw_wdog fdt
 arm/allwinner/axp81x.c		optional	axp81x fdt
 arm/allwinner/if_awg.c		optional	awg ext_resources syscon aw_sid nvmem fdt
+arm/allwinner/sun8i_codec.c	optional	fdt sound
 
 # Allwinner clock driver
 arm/allwinner/clkng/aw_ccung.c		optional	aw_ccu fdt
@@ -382,6 +385,10 @@ dev/psci/smccc_arm64.S		standard
 dev/psci/smccc.c		standard
 dev/safexcel/safexcel.c		optional	safexcel fdt
 dev/sdhci/sdhci_xenon.c		optional	sdhci_xenon sdhci fdt
+dev/sound/fdt/audio_dai_if.m	optional	sound fdt
+dev/sound/fdt/audio_soc.c	optional	sound fdt
+dev/sound/fdt/dummy_codec.c	optional	sound fdt
+dev/sound/fdt/simple_amplifier.c	optional	sound fdt
 dev/uart/uart_cpu_arm64.c	optional	uart
 dev/uart/uart_dev_mu.c		optional	uart uart_mu
 dev/uart/uart_dev_pl011.c	optional	uart pl011
@@ -424,13 +431,16 @@ cddl/dev/fbt/aarch64/fbt_isa.c				optional dtrace_fbt | dtraceall compile-with "
 
 # RockChip Drivers
 arm64/rockchip/rk3399_emmcphy.c		optional fdt rk_emmcphy soc_rockchip_rk3399
+arm64/rockchip/rk3328_codec.c		optional fdt rk3328codec soc_rockchip_rk3328
 arm64/rockchip/rk_dwc3.c		optional fdt rk_dwc3 soc_rockchip_rk3399
 arm64/rockchip/rk_i2c.c			optional fdt rk_i2c soc_rockchip_rk3328 | fdt rk_i2c soc_rockchip_rk3399
+arm64/rockchip/rk_i2s.c			optional fdt sound soc_rockchip_rk3328 | fdt sound soc_rockchip_rk3399
 arm64/rockchip/rk805.c			optional fdt rk805 soc_rockchip_rk3328 | fdt rk805 soc_rockchip_rk3399
 arm64/rockchip/rk_grf.c			optional fdt soc_rockchip_rk3328 | fdt soc_rockchip_rk3399
 arm64/rockchip/rk_pinctrl.c		optional fdt rk_pinctrl soc_rockchip_rk3328 | fdt rk_pinctrl soc_rockchip_rk3399
 arm64/rockchip/rk_gpio.c		optional fdt rk_gpio soc_rockchip_rk3328 | fdt rk_gpio soc_rockchip_rk3399
 arm64/rockchip/rk_iodomain.c		optional fdt rk_iodomain
+arm64/rockchip/rk_hdmi_audio_hack.c	optional fdt sound
 arm64/rockchip/rk_spi.c			optional fdt rk_spi
 arm64/rockchip/rk_usb2phy.c		optional fdt rk_usb2phy soc_rockchip_rk3328 | soc_rockchip_rk3399
 arm64/rockchip/rk_typec_phy.c		optional fdt rk_typec_phy soc_rockchip_rk3399

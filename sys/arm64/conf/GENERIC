@@ -249,8 +249,11 @@ device		smsc
 device		ure
 
 # Sound support
-device sound
-device a10_codec
+device		sound
+device		a10_codec
+device		es8316codec
+device		rk3328codec
+device		rt5640codec
 
 # DMA controller
 device		a31_dmac

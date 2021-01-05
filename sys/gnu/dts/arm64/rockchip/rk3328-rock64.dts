@@ -103,6 +103,10 @@
 	};
 };
 
+&analog_sound {
+	status = "okay";
+}
+
 &codec {
 	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
 	status = "okay";

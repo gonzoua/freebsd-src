@@ -13,7 +13,9 @@ DTS=	\
 	rockchip/rk3399-rock-pi-4.dts \
 	rockchip/rk3328-rock64.dts \
 	rockchip/rk3399-firefly.dts \
-	rockchip/rk3399-rockpro64.dts
+	rockchip/rk3399-rockpro64.dts \
+	rockchip/rk3399-roc-pc.dts \
+	rockchip/rk3399-roc-pc-plus.dts
 
 DTSO=	rk3328-dwc3.dtso
 .endif

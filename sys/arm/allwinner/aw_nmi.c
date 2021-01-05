@@ -55,6 +55,7 @@ __FBSDID("$FreeBSD$");
 #define	A20_NMI_IRQ_ENABLE_REG	0x8
 #define	A31_NMI_IRQ_ENABLE_REG	0x34
 #define	 NMI_IRQ_ENABLE		(1U << 0)
+#define	 NMI_IRQ_DISABLE	(0U << 0)
 
 #define	R_NMI_IRQ_CTRL_REG	0x0c
 #define	R_NMI_IRQ_PENDING_REG	0x10
